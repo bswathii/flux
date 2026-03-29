@@ -5,6 +5,8 @@ POST /pair         ← Android app claims pairing code
 GET  /health
 """
 from __future__ import annotations
+
+import app
 from dotenv import load_dotenv
 load_dotenv()
 import hashlib
@@ -50,6 +52,9 @@ def _allow(user_id: str, limit: int = 60) -> bool:
     _rate[user_id].append(now)
     return True
 
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
 
 # ── OTP patterns ────────────────────────────────────────────────────────────
 
