@@ -24,8 +24,8 @@ from telegram.ext import (
     ContextTypes, ConversationHandler, MessageHandler, filters,
 )
 
-import db
-from sms_intelligence import get_snapshot, push_telegram
+from directory import db
+from directory.sms_intelligence import get_snapshot, push_telegram
 
 TELEGRAM_TOKEN   = os.environ["TELEGRAM_BOT_TOKEN"]
 

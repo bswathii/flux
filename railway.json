@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "uvicorn directory.sms_intelligence:app --host 0.0.0.0 --port $PORT & python -m directory.telegram_bot",
+    "startCommand": "uvicorn directory.sms_intelligence:app --host 0.0.0.0 --port $PORT",
     "healthcheckPath": "/health",
     "healthcheckTimeout": 30,
     "restartPolicyType": "ON_FAILURE",
