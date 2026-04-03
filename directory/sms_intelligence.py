@@ -6,7 +6,6 @@ GET  /health
 """
 from __future__ import annotations
 
-import app
 from dotenv import load_dotenv
 load_dotenv()
 import hashlib
@@ -22,8 +21,8 @@ import httpx
 from fastapi import BackgroundTasks, FastAPI, HTTPException, Header, Request
 from pydantic import BaseModel
 
-import db
-from sms_parser import parse as parse_sms
+from directory import db
+from directory.sms_parser import parse as parse_sms
 
 # ── Config ─────────────────────────────────────────────────────────────────
 
